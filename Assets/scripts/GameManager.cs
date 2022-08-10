@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour {
 	void OnEnable(){
 		TapController.OnPlayerDied += OnPlayerDied;
 		TapController.OnPlayerScored += OnPlayerScored;
-	
+		CountdownText.OnCountdownFinished += OnCountdownFinished;
 	}
 
 	void OnDisable(){
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour {
 
 	void OnCountdownFinished(){
 		SetPageState (PageState.None);
-		OnGameStarted ();
+        OnGameStarted();
 		score = 0;
 		gameOver = false;
 	
@@ -65,8 +65,8 @@ public class GameManager : MonoBehaviour {
 
 	void OnPlayerScored(){
 	
-		_score++;
-		scoreText.text = _score;
+		score++;
+		scoreText.text = score.ToString();
 	}
 
 	void SetPageState(PageState state){
