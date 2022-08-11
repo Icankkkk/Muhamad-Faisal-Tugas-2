@@ -15,7 +15,7 @@ public class CountdownText : MonoBehaviour {
 	void OnEnable(){
 		countdown = GetComponent<Text>();
 		countdown.text = "3";
-		StartCoroutine ("Countdown");
+		StartCoroutine (Countdown());
 	
 	
 	}
